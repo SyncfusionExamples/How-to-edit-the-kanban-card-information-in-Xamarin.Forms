@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="KanbanSample.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:kanban="clr-namespace:Syncfusion.SfKanban.XForms;assembly=Syncfusion.SfKanban.XForms"
+    xmlns:local="clr-namespace:KanbanSample"
+    xmlns:ListCollection="clr-namespace:System.Collections.Generic;assembly=netstandard"
+    xmlns:sfPopup="clr-namespace:Syncfusion.XForms.PopupLayout;assembly=Syncfusion.SfPopupLayout.XForms"
+    xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms">
+
+    <ContentPage.BindingContext>
+        <local:CustomViewModel x:Name="viewModel"/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="dataTemplate">
+                <StackLayout BackgroundColor="Gray">
+                    <Grid ColumnSpacing="0" HorizontalOptions="FillAndExpand" Padding="10" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="80" />
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout Grid.Column="0"  Orientation="Vertical" >
+                            <Label FontSize="Small" Text="{Binding Path=ID}" TextColor="Black"/>
+                            <Label Text="{Binding Path=Title}" />
+                            <Label FontSize="Small" Text="{Binding Path=Description}" WidthRequest="150" TextColor="Silver" LineBreakMode="WordWrap" />
+                        </StackLayout>
+
+                        <StackLayout Grid.Column="1" >
+                            <Image WidthRequest="60" HeightRequest="60" HorizontalOptions="End" VerticalOptions="CenterAndExpand" Source="{Binding Path=ImageURL}"></Image>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+            </DataTemplate>
+          </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout>
+
+        <kanban:SfKanban x:Name="kanban" 
+                    ItemsSource="{Binding Cards}"
+                    AutoGenerateColumns="True"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    CardTemplate="{StaticResource dataTemplate}"
+                    ItemTapped="Kanban_ItemTapped"
+                    WidthRequest="400"
+                    HeightRequest="600">
+
+            <kanban:SfKanban.Columns>
+                <kanban:KanbanColumn x:Name="todoColumn" Title="To Do" MinimumLimit="3" MaximumLimit="5">
+                </kanban:KanbanColumn>
+
+                <kanban:KanbanColumn x:Name="progressColumn" Title="In Progress" MinimumLimit="2" MaximumLimit="5">
+                </kanban:KanbanColumn>
+
+                <kanban:KanbanColumn x:Name="codeColumn" Title="Code Review" MinimumLimit="3" MaximumLimit="5">
+                </kanban:KanbanColumn>
+
+                <kanban:KanbanColumn x:Name="doneColumn" Title="Done" MinimumLimit="2" MaximumLimit="6">
+                </kanban:KanbanColumn>
+
+            </kanban:SfKanban.Columns>
+        </kanban:SfKanban>
+
+    </StackLayout>
+</ContentPage>
