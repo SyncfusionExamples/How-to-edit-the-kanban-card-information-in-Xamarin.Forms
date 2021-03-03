@@ -1,4 +1,4 @@
-# How-to-edit-the-kanban-cards-in-Xamarin.Forms
+# How to edit Xamarin.Forms Kanban card details in dynamically
 This article explains how to edit the Kanban cards in [Syncfusion Xamarin.Forms SfKanban](https://help.syncfusion.com/xamarin/kanban-board/getting-started).
 
 Let us have the use case to show popup while tapping the desired card and that popup contains the field to edit all necessary information once done our editing, it should be updated in the corresponding cards. 
