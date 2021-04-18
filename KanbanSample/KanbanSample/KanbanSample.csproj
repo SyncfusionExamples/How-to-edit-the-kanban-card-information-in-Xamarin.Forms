@@ -6,7 +6,7 @@
 
 <ItemGroup>
 <PackageReference Include="Syncfusion.Xamarin.SfComboBox" Version="*" />
-<PackageReference Include="Xamarin.Forms" Version="4.1.0.778454" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1821" />
 <PackageReference Include="Syncfusion.Xamarin.SfKanban" Version="*" />
 
 </ItemGroup>
