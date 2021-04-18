@@ -163,8 +163,8 @@
     <PackageReference Include="Syncfusion.Xamarin.SfComboBox">
       <Version>*</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="4.1.0.778454" />
-    <PackageReference Include="Syncfusion.Xamarin.SfKanban" Version="*" />
+     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1821" />
+<PackageReference Include="Syncfusion.Xamarin.SfKanban" Version="*" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
